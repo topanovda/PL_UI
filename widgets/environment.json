@@ -1,0 +1,13 @@
+[ {
+  "values" : [ "main" ],
+  "name" : "Branch"
+}, {
+  "values" : [ "e78598461d1d07604f48c42a9cc0bc03e804f954" ],
+  "name" : "Commit"
+}, {
+  "values" : [ "chrome" ],
+  "name" : "Browser"
+}, {
+  "values" : [ "staging" ],
+  "name" : "Stage"
+} ]
