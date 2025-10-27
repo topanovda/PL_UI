@@ -4,7 +4,7 @@ services: # Описание микросервисов (контейнеров)
     build: # Инструкции для сборки образа, если он не найден
       context: . # Контекст сборки (текущая директория)
       dockerfile: Dockerfile-chromium # Имя Dockerfile на основе которого будет сборка
-      shm_size: 2gb
+    shm_size: 2gb
     volumes: # Тома для монтирования
       - ./:/usr/workspace
       - /dev/shm:/dev/shm
