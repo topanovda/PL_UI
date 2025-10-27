@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     # Используем Docker-образ из Docker Hub как окружение
     container:
-      image: topanovda/pl-ui:v1   # ← твой образ из Docker Hub
+      image: topanov/pl-ui:v1   # ← твой образ из Docker Hub
       options: --shm-size=2g      # важно для браузерных тестов (Chromium/Firefox)
 
     env:
