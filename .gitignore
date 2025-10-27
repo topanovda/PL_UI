@@ -1,3 +1,9 @@
 .env
 .venv
+.DS_Store
+allurectl
+.idea
+*__pycache__*
+report
+venv
 allure-results

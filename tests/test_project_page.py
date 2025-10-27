@@ -7,7 +7,7 @@ import pytest
 
 class TestProjectPage(BaseTest):
 
-    @pytest.mark.change_role
+    @pytest.mark.smoke
     @allure.feature("Смена подроли пользователя")
     def test_switch_role(self):
         self.login_page.open()
