@@ -65,7 +65,9 @@ jobs:
         env:
           STAGE: ${{ secrets.STAGE }}
           BROWSER: ${{ inputs.BROWSER }}
-        run: docker compose up tests
+          SUITE: ${{ inputs.MARKER }}
+          THREADS: ${{ inputs.THREADS }}
+        run: docker compose up pl-ui
 
       # Шаг 4 - Копирование истории
       - name: Copy Allure history
