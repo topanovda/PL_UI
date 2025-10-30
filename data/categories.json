@@ -1,5 +1,26 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "children" : [ ],
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: 'NoneType' object is not iterable",
+      "children" : [ {
+        "name" : "test_login",
+        "uid" : "47de57f570e1977d",
+        "parentUid" : "5ae019e15b757cc14ae13e78aec51419",
+        "status" : "broken",
+        "time" : {
+          "start" : 1761846056663,
+          "stop" : 1761846062120,
+          "duration" : 5457
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5ae019e15b757cc14ae13e78aec51419"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
   "name" : "categories"
 }

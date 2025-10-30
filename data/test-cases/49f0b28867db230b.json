@@ -1,0 +1,205 @@
+{
+  "uid" : "49f0b28867db230b",
+  "name" : "test_login",
+  "fullName" : "tests.test_login_page.TestLoginPage#test_login",
+  "historyId" : "3c779999a209d1dc27adabe4d61acaff",
+  "time" : {
+    "start" : 1761846043939,
+    "stop" : 1761846050201,
+    "duration" : 6262
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: 'NoneType' object is not iterable",
+  "statusTrace" : "self = <test_login_page.TestLoginPage object at 0x7f1f252f0e10>\n\n    @pytest.mark.login\n    def test_login(self):\n        self.login_page.open()\n>       self.login_page.login_as(\"admin\")\n\ntests/test_login_page.py:12: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/login_page/page.py:39: in login_as\n    self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\nhelpers/ui_helper.py:62: in fill\n    element.send_keys(text)\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:305: in send_keys\n    Command.SEND_KEYS_TO_ELEMENT, {\"text\": \"\".join(keys_to_typing(value)), \"value\": keys_to_typing(value)}\n                                                   ^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nvalue = (None,)\n\n    def keys_to_typing(value: Iterable[AnyKey]) -> list[str]:\n        \"\"\"Processes the values that will be typed in the element.\"\"\"\n        characters: list[str] = []\n        for val in value:\n            if isinstance(val, Keys):\n                # Todo: Does this even work?\n                characters.append(str(val))\n            elif isinstance(val, (int, float)):\n                characters.extend(str(val))\n            else:\n>               characters.extend(val)\nE               TypeError: 'NoneType' object is not iterable\n\n../local/lib/python3.13/site-packages/selenium/webdriver/common/utils.py:139: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1761846043425,
+      "stop" : 1761846043903,
+      "duration" : 478
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage",
+    "time" : {
+      "start" : 1761846043903,
+      "stop" : 1761846043938,
+      "duration" : 35
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1761846043329,
+      "stop" : 1761846043425,
+      "duration" : 96
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: 'NoneType' object is not iterable",
+    "statusTrace" : "self = <test_login_page.TestLoginPage object at 0x7f1f252f0e10>\n\n    @pytest.mark.login\n    def test_login(self):\n        self.login_page.open()\n>       self.login_page.login_as(\"admin\")\n\ntests/test_login_page.py:12: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/login_page/page.py:39: in login_as\n    self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\nhelpers/ui_helper.py:62: in fill\n    element.send_keys(text)\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:305: in send_keys\n    Command.SEND_KEYS_TO_ELEMENT, {\"text\": \"\".join(keys_to_typing(value)), \"value\": keys_to_typing(value)}\n                                                   ^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nvalue = (None,)\n\n    def keys_to_typing(value: Iterable[AnyKey]) -> list[str]:\n        \"\"\"Processes the values that will be typed in the element.\"\"\"\n        characters: list[str] = []\n        for val in value:\n            if isinstance(val, Keys):\n                # Todo: Does this even work?\n                characters.append(str(val))\n            elif isinstance(val, (int, float)):\n                characters.extend(str(val))\n            else:\n>               characters.extend(val)\nE               TypeError: 'NoneType' object is not iterable\n\n../local/lib/python3.13/site-packages/selenium/webdriver/common/utils.py:139: TypeError",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1761846043939,
+        "stop" : 1761846049034,
+        "duration" : 5095
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Open https://lk.staging.po.ladcloud.ru page",
+        "time" : {
+          "start" : 1761846043939,
+          "stop" : 1761846049034,
+          "duration" : 5095
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Login as role: 'admin'",
+      "time" : {
+        "start" : 1761846049034,
+        "stop" : 1761846050199,
+        "duration" : 1165
+      },
+      "status" : "broken",
+      "statusMessage" : "TypeError: 'NoneType' object is not iterable\n",
+      "statusTrace" : "  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/login_page/page.py\", line 39, in login_as\n    self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/workspace/helpers/ui_helper.py\", line 62, in fill\n    element.send_keys(text)\n    ~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py\", line 305, in send_keys\n    Command.SEND_KEYS_TO_ELEMENT, {\"text\": \"\".join(keys_to_typing(value)), \"value\": keys_to_typing(value)}\n                                                   ~~~~~~~~~~~~~~^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/common/utils.py\", line 139, in keys_to_typing\n    characters.extend(val)\n    ~~~~~~~~~~~~~~~~~^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "role",
+        "value" : "'admin'"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "7bd44594e33874d8",
+      "name" : "Ошибка",
+      "source" : "7bd44594e33874d8.png",
+      "type" : "image/png",
+      "size" : 83974
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1761846050429,
+      "stop" : 1761846050501,
+      "duration" : 72
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage::0",
+    "time" : {
+      "start" : 1761846050429,
+      "stop" : 1761846050429,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "role",
+    "value" : "admin"
+  }, {
+    "name" : "tag",
+    "value" : "login"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_login_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLoginPage"
+  }, {
+    "name" : "host",
+    "value" : "dd0494c2e8f6"
+  }, {
+    "name" : "thread",
+    "value" : "8-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_login_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "login" ]
+  },
+  "source" : "49f0b28867db230b.json",
+  "parameterValues" : [ ]
+}
