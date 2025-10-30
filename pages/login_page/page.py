@@ -20,7 +20,7 @@ class LoginPage(BasePage):
     def login_as(self, role):
         allure.dynamic.label("role", role)  # добавляем роль как кастомный label
         if role == "admin": # Тут перечисляем нужные роли и имена файлов для их куков
-            cookies_file = "cookies/admin-coolies.pkl"
+            cookies_file = "cookies/admin-cookies.pkl"
         elif role == "user":
             cookies_file = "cookies/user-cookies.pkl"
         else:
