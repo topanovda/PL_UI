@@ -74,7 +74,9 @@ jobs:
       # Запуск тестов
       - name: Run tests via docker-compose
         env:
-          STAGE: ${{ inputs.STAGE }}
+          STAGE: ${{ secrets.STAGE }}
+          LOGIN: ${{ secrets.STAGING_LOGIN }}
+          PASSWORD: ${{ secrets.STAGING_PASSWORD }}
           BROWSER: ${{ inputs.BROWSER }}
           SUITE: ${{ inputs.MARKER }}
           THREADS: ${{ inputs.THREADS }}

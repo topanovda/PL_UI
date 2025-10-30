@@ -8,13 +8,13 @@ services: # Описание микросервисов (контейнеров)
     volumes: # Тома для монтирования
       - ./:/usr/workspace
       - /dev/shm:/dev/shm
-#    command: /bin/sh -c "STAGE=$$STAGE BROWSER=$$BROWSER pytest -sv -o log_cli=true -m=$$SUITE -n=$$THREADS --alluredir=allure-results"
-    command: /bin/sh -c "STAGE=$$STAGE BROWSER=$$BROWSER pytest -sv -o log_cli=true -m=$$SUITE --alluredir=allure-results"
+    command: /bin/sh -c "STAGE=$$STAGE BROWSER=$$BROWSER pytest -sv -o log_cli=true -m=$$SUITE -n=$$THREADS --alluredir=allure-results"
+#    command: /bin/sh -c "STAGE=$$STAGE BROWSER=$$BROWSER pytest -sv -o log_cli=true -m=$$SUITE --alluredir=allure-results"
     environment: # Переменные окружения
       STAGE: ${STAGE:-staging}
       BROWSER: ${BROWSER:-chrome}
       SUITE: ${SUITE}
-#      THREADS: ${THREADS:-1}
+      THREADS: ${THREADS:-1}
     tty: true # Для цветного вывода логов
 
 #    комманда для запуска $env:SUITE = "login"; docker-compose up
