@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Thu Oct 30 17:40:56 GMT 2025","Thu Oct 30 17:41:02 GMT 2025","5457","tests","test_login_page","TestLoginPage","","","test_login",""
+"broken","Thu Oct 30 18:06:59 GMT 2025","Thu Oct 30 18:07:02 GMT 2025","3435","tests","test_login_page","TestLoginPage","","","test_login",""

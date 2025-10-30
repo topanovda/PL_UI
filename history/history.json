@@ -2,13 +2,22 @@
   "3c779999a209d1dc27adabe4d61acaff" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "2cb64dd1f16d4b12",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
+      "time" : {
+        "start" : 1761847619536,
+        "stop" : 1761847622971,
+        "duration" : 3435
+      }
+    }, {
       "uid" : "47de57f570e1977d",
       "status" : "broken",
       "statusDetails" : "TypeError: 'NoneType' object is not iterable",
