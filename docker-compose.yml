@@ -1,6 +1,6 @@
 services: # Описание микросервисов (контейнеров)
   pl-ui: # Имя контейнера (по умолчанию добавится -1)
-    image: pl-ui:v1 # Базовый образ для контейнера (если такого нет, соберется из докерфайла)
+    image: topanov/pl-ui:v1 # Базовый образ для контейнера (если такого нет, соберется из докерфайла)
     build: # Инструкции для сборки образа, если он не найден
       context: . # Контекст сборки (текущая директория)
       dockerfile: Dockerfile-chromium # Имя Dockerfile на основе которого будет сборка
@@ -18,7 +18,7 @@ services: # Описание микросервисов (контейнеров)
 
 #    комманда для запуска $env:SUITE = "login"; docker-compose up
   report:
-    image: pl-ui:v1
+    image: topanov/pl-ui:v1
     build:
       context: .
       dockerfile: Dockerfile
