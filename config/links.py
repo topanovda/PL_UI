@@ -8,7 +8,9 @@ stages = {
 }
 
 class Links:
-    HOST = stages[os.getenv("STAGE")]
+    STAGE = os.getenv("STAGE", "staging")
+    HOST = stages.get(STAGE, stages["staging"])
+    # HOST = stages[os.getenv("STAGE")]
 
     PROJECTS_PAGE = f"{HOST}/gant-v2"
     NSI_PAGE = f"{HOST}/nsi"
