@@ -6,13 +6,13 @@
       "name" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
       "children" : [ {
         "name" : "test_login",
-        "uid" : "2cb64dd1f16d4b12",
+        "uid" : "d6b5720487bc9e97",
         "parentUid" : "e654024171d8bd0aa036bee3720c73ff",
         "status" : "broken",
         "time" : {
-          "start" : 1761847619536,
-          "stop" : 1761847622971,
-          "duration" : 3435
+          "start" : 1761848308927,
+          "stop" : 1761848311996,
+          "duration" : 3069
         },
         "flaky" : false,
         "newFailed" : false,

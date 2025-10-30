@@ -1,0 +1,205 @@
+{
+  "uid" : "b8a5adb28336e975",
+  "name" : "test_login",
+  "fullName" : "tests.test_login_page.TestLoginPage#test_login",
+  "historyId" : "3c779999a209d1dc27adabe4d61acaff",
+  "time" : {
+    "start" : 1761848300759,
+    "stop" : 1761848304136,
+    "duration" : 3377
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
+  "statusTrace" : "self = <test_login_page.TestLoginPage object at 0x7f39f27a0e10>\n\n    @pytest.mark.login\n    def test_login(self):\n        self.login_page.open()\n>       self.login_page.login_as(\"admin\")\n\ntests/test_login_page.py:12: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.login_page.page.LoginPage object at 0x7f39f27cd940>\nrole = 'admin'\n\n    @allure.step(\"Login as role: {role}\")\n    def login_as(self, role):\n        allure.dynamic.label(\"role\", role)  # добавляем роль как кастомный label\n        if role == \"admin\": # Тут перечисляем нужные роли и имена файлов для их куков\n            cookies_file = \"cookies/admin-cookies.pkl\"\n        elif role == \"user\":\n            cookies_file = \"cookies/user-cookies.pkl\"\n        else:\n            cookies_file = \"cookies/cookies.pkl\"\n    \n        if os.path.exists(cookies_file):\n            # Подгружаем куки в браузер\n            self.driver.delete_all_cookies()\n            with open(cookies_file, \"rb\") as cookies_file:\n                cookies = pickle.load(cookies_file)\n                for cookie in cookies:\n                    self.driver.add_cookie(cookie)\n            self.driver.refresh()\n        else:\n            # Если файла с куки не существует, выполняет логин\n>           self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\n                                            ^^^^^^^^^^^^^^^^^\nE           AttributeError: type object 'Credentials' has no attribute 'LOGIN'\n\npages/login_page/page.py:39: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1761848300178,
+      "stop" : 1761848300259,
+      "duration" : 81
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage",
+    "time" : {
+      "start" : 1761848300723,
+      "stop" : 1761848300758,
+      "duration" : 35
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1761848300259,
+      "stop" : 1761848300723,
+      "duration" : 464
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
+    "statusTrace" : "self = <test_login_page.TestLoginPage object at 0x7f39f27a0e10>\n\n    @pytest.mark.login\n    def test_login(self):\n        self.login_page.open()\n>       self.login_page.login_as(\"admin\")\n\ntests/test_login_page.py:12: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.login_page.page.LoginPage object at 0x7f39f27cd940>\nrole = 'admin'\n\n    @allure.step(\"Login as role: {role}\")\n    def login_as(self, role):\n        allure.dynamic.label(\"role\", role)  # добавляем роль как кастомный label\n        if role == \"admin\": # Тут перечисляем нужные роли и имена файлов для их куков\n            cookies_file = \"cookies/admin-cookies.pkl\"\n        elif role == \"user\":\n            cookies_file = \"cookies/user-cookies.pkl\"\n        else:\n            cookies_file = \"cookies/cookies.pkl\"\n    \n        if os.path.exists(cookies_file):\n            # Подгружаем куки в браузер\n            self.driver.delete_all_cookies()\n            with open(cookies_file, \"rb\") as cookies_file:\n                cookies = pickle.load(cookies_file)\n                for cookie in cookies:\n                    self.driver.add_cookie(cookie)\n            self.driver.refresh()\n        else:\n            # Если файла с куки не существует, выполняет логин\n>           self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\n                                            ^^^^^^^^^^^^^^^^^\nE           AttributeError: type object 'Credentials' has no attribute 'LOGIN'\n\npages/login_page/page.py:39: AttributeError",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1761848300759,
+        "stop" : 1761848304134,
+        "duration" : 3375
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Open https://lk.staging.po.ladcloud.ru page",
+        "time" : {
+          "start" : 1761848300759,
+          "stop" : 1761848304134,
+          "duration" : 3375
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Login as role: 'admin'",
+      "time" : {
+        "start" : 1761848304134,
+        "stop" : 1761848304134,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'\n",
+      "statusTrace" : "  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/login_page/page.py\", line 39, in login_as\n    self.ui.fill(self._EMAIL_FIELD, Credentials.LOGIN)\n                                    ^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "role",
+        "value" : "'admin'"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b0a810f25f7dbeeb",
+      "name" : "Ошибка",
+      "source" : "b0a810f25f7dbeeb.png",
+      "type" : "image/png",
+      "size" : 84135
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage::0",
+    "time" : {
+      "start" : 1761848304398,
+      "stop" : 1761848304398,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1761848304398,
+      "stop" : 1761848304466,
+      "duration" : 68
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "role",
+    "value" : "admin"
+  }, {
+    "name" : "tag",
+    "value" : "login"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_login_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLoginPage"
+  }, {
+    "name" : "host",
+    "value" : "551aa9ada792"
+  }, {
+    "name" : "thread",
+    "value" : "8-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_login_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "login" ]
+  },
+  "source" : "b8a5adb28336e975.json",
+  "parameterValues" : [ ]
+}
