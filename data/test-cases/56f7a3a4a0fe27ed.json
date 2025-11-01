@@ -1,0 +1,256 @@
+{
+  "uid" : "56f7a3a4a0fe27ed",
+  "name" : "test_login",
+  "fullName" : "tests.test_login_page.TestLoginPage#test_login",
+  "historyId" : "3c779999a209d1dc27adabe4d61acaff",
+  "time" : {
+    "start" : 1762002065139,
+    "stop" : 1762002074980,
+    "duration" : 9841
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1762002064576,
+      "stop" : 1762002065113,
+      "duration" : 537
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage",
+    "time" : {
+      "start" : 1762002065113,
+      "stop" : 1762002065139,
+      "duration" : 26
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1762002064507,
+      "stop" : 1762002064575,
+      "duration" : 68
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1762002065140,
+        "stop" : 1762002069830,
+        "duration" : 4690
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Open https://lk.staging.po.ladcloud.ru page",
+        "time" : {
+          "start" : 1762002065140,
+          "stop" : 1762002069830,
+          "duration" : 4690
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Login as role: 'admi n'",
+      "time" : {
+        "start" : 1762002069830,
+        "stop" : 1762002073858,
+        "duration" : 4028
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "role",
+        "value" : "'admi n'"
+      } ],
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762002073858,
+        "stop" : 1762002074980,
+        "duration" : 1122
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1762002074981,
+      "stop" : 1762002075048,
+      "duration" : 67
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestLoginPage::0",
+    "time" : {
+      "start" : 1762002074981,
+      "stop" : 1762002074981,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "role",
+    "value" : "admi n"
+  }, {
+    "name" : "tag",
+    "value" : "login"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_login_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLoginPage"
+  }, {
+    "name" : "host",
+    "value" : "dd950d3aafa5"
+  }, {
+    "name" : "thread",
+    "value" : "8-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_login_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "bbbf239601f04aee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1762001314847,
+          "stop" : 1762001325035,
+          "duration" : 10188
+        }
+      }, {
+        "uid" : "d6b5720487bc9e97",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
+        "time" : {
+          "start" : 1761848308927,
+          "stop" : 1761848311996,
+          "duration" : 3069
+        }
+      }, {
+        "uid" : "2cb64dd1f16d4b12",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
+        "time" : {
+          "start" : 1761847619536,
+          "stop" : 1761847622971,
+          "duration" : 3435
+        }
+      }, {
+        "uid" : "47de57f570e1977d",
+        "status" : "broken",
+        "statusDetails" : "TypeError: 'NoneType' object is not iterable",
+        "time" : {
+          "start" : 1761846056663,
+          "stop" : 1761846062120,
+          "duration" : 5457
+        }
+      } ]
+    },
+    "tags" : [ "login" ]
+  },
+  "source" : "56f7a3a4a0fe27ed.json",
+  "parameterValues" : [ ]
+}
