@@ -70,6 +70,8 @@ jobs:
           echo "Commit=${{ github.sha }}" >> allure-results/environment.properties
           echo "Browser=${{ github.event.inputs.BROWSER }}" >> allure-results/environment.properties
           echo "Stage=${{ github.event.inputs.ENV }}" >> allure-results/environment.properties
+          echo "Suite=${{ github.event.inputs.MARKER }}" >> allure-results/environment.properties
+          echo "Threads=${{ github.event.inputs.THREADS }}" >> allure-results/environment.properties
 
       # Запуск тестов
       - name: Run tests via docker-compose
@@ -97,6 +99,7 @@ jobs:
           BROWSER: ${{ github.event.inputs.BROWSER }}
           STAGE: ${{ github.event.inputs.ENV }}
           SUITE: ${{ github.event.inputs.MARKER }}
+          THREADS: ${{ github.event.inputs.THREADS }}
           CI_COMMIT_REF_NAME: ${{ github.ref_name }}
           CI_COMMIT_SHORT_SHA: ${{ github.sha }}
         run: docker compose run --rm report
