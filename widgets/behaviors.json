@@ -1,4 +1,59 @@
 {
-  "total" : 1,
-  "items" : [ ]
+  "total" : 5,
+  "items" : [ {
+    "uid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+    "name" : "Справочники",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 16,
+      "unknown" : 0,
+      "total" : 16
+    }
+  }, {
+    "uid" : "a8e5734cd404b814db2d9ef958a67457",
+    "name" : "Переход в раздел справочников {catalog_name}",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 14,
+      "unknown" : 0,
+      "total" : 14
+    }
+  }, {
+    "uid" : "ac4f2fbd5788d27191e3ac4099920cb2",
+    "name" : "Переход в раздел Справочники",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "e8a8c03566cb87164780efd80ab32053",
+    "name" : "переход к созданию элемента справочника",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "5d396d9d1202be37c1fd4855dce0ecd7",
+    "name" : "Смена подроли пользователя",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  } ]
 }

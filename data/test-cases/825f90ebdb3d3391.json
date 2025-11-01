@@ -1,0 +1,414 @@
+{
+  "uid" : "825f90ebdb3d3391",
+  "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u043e\\u0432-edit]",
+  "fullName" : "tests.test_nsi_page.TestNSIPage#test_open_attributes",
+  "historyId" : "2e8e1fac433b1d78c794eb7b2cb9cd0b",
+  "time" : {
+    "start" : 1762001448420,
+    "stop" : 1762001467879,
+    "duration" : 19459
+  },
+  "status" : "broken",
+  "statusMessage" : "ValueError: Строка с названием 'Типы проектов' не найдена",
+  "statusTrace" : "self = <test_nsi_page.TestNSIPage object at 0x7f9dc74563f0>, action = 'edit'\ncatalog_name = 'Типы проектов'\n\n    @pytest.mark.smoke\n    @allure.feature(\"Переход в раздел справочников {catalog_name}\")\n    @pytest.mark.parametrize(\"action\", [\"open\", \"edit\"])\n    @pytest.mark.parametrize(\"catalog_name\", [\"Типы проектов\", \"Атрибуты\", \"Показатели\", \"Базовые календари\", \"Единицы измерения\", \"Типы версий\", \"Статусы версий\"])\n    def test_open_attributes(self, action, catalog_name):\n        allure.dynamic.label(\"catalog_name\", catalog_name)\n        with allure.step(\"Открытие страницы\"):\n            self.login_page.open()\n        with allure.step(\"Авторизация как admin\"):\n            self.login_page.login_as(\"admin\")\n        with allure.step(\"Проверка что страница открыта\"):\n            self.project_page.is_page_opened()\n        with allure.step(\"Переход в под роль Планировщик\"):\n            self.sidebar.select_role(\"planer\")\n        with allure.step(\"Переход на страницу Справочники\"):\n            self.nsi_page.open()\n        with allure.step(\"Проверка что страница открыта\"):\n            self.nsi_page.is_page_opened()\n        with allure.step(f\"Переход в каталог '{catalog_name}' с действием '{action}'\"):\n>           self.nsi_page.open_catalog(catalog_name, action)\n\ntests/test_nsi_page.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/nsi_page/page.py:43: in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.nsi_page.components.nsi_table_handler.NsiTableHandler object at 0x7f9dc7088d60>\ncatalog_name = 'Типы проектов', action = 'edit'\n\n    def select_row_by_text(self, catalog_name: str, action: str):\n        \"\"\"\n        Ищет строку по названию каталога и выполняет действие open | edit\n        :param catalog_name: Название каталога\n        :param action: Действие open или edit\n        :return:\n        \"\"\"\n        for row in self._rows:\n            # Получаем все ячейки в строке\n            cells = row.find_elements(*self._CELLS_LOCATOR)\n    \n            # Проверяем, содержится ли нужный текст хотя бы в одной ячейке\n            if any(catalog_name in cell.text for cell in cells):\n                if action == \"edit\":\n                    row.find_element(*self._EDIT_BUTTON).click()\n                    return\n                elif action == \"open\":\n                    row.find_element(*self._OPEN_BUTTON).click()\n                    return\n                else:\n                    raise AssertionError(\"Неверное значение параметра action\")\n    \n        # Если цикл завершился без return, значит совпадение не найдено\n>       raise ValueError(f\"Строка с названием '{catalog_name}' не найдена\")\nE       ValueError: Строка с названием 'Типы проектов' не найдена\n\npages/nsi_page/components/nsi_table_handler.py:87: ValueError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1762001446962,
+      "stop" : 1762001448277,
+      "duration" : 1315
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1762001446812,
+      "stop" : 1762001446962,
+      "duration" : 150
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage",
+    "time" : {
+      "start" : 1762001448278,
+      "stop" : 1762001448415,
+      "duration" : 137
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "ValueError: Строка с названием 'Типы проектов' не найдена",
+    "statusTrace" : "self = <test_nsi_page.TestNSIPage object at 0x7f9dc74563f0>, action = 'edit'\ncatalog_name = 'Типы проектов'\n\n    @pytest.mark.smoke\n    @allure.feature(\"Переход в раздел справочников {catalog_name}\")\n    @pytest.mark.parametrize(\"action\", [\"open\", \"edit\"])\n    @pytest.mark.parametrize(\"catalog_name\", [\"Типы проектов\", \"Атрибуты\", \"Показатели\", \"Базовые календари\", \"Единицы измерения\", \"Типы версий\", \"Статусы версий\"])\n    def test_open_attributes(self, action, catalog_name):\n        allure.dynamic.label(\"catalog_name\", catalog_name)\n        with allure.step(\"Открытие страницы\"):\n            self.login_page.open()\n        with allure.step(\"Авторизация как admin\"):\n            self.login_page.login_as(\"admin\")\n        with allure.step(\"Проверка что страница открыта\"):\n            self.project_page.is_page_opened()\n        with allure.step(\"Переход в под роль Планировщик\"):\n            self.sidebar.select_role(\"planer\")\n        with allure.step(\"Переход на страницу Справочники\"):\n            self.nsi_page.open()\n        with allure.step(\"Проверка что страница открыта\"):\n            self.nsi_page.is_page_opened()\n        with allure.step(f\"Переход в каталог '{catalog_name}' с действием '{action}'\"):\n>           self.nsi_page.open_catalog(catalog_name, action)\n\ntests/test_nsi_page.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/nsi_page/page.py:43: in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pages.nsi_page.components.nsi_table_handler.NsiTableHandler object at 0x7f9dc7088d60>\ncatalog_name = 'Типы проектов', action = 'edit'\n\n    def select_row_by_text(self, catalog_name: str, action: str):\n        \"\"\"\n        Ищет строку по названию каталога и выполняет действие open | edit\n        :param catalog_name: Название каталога\n        :param action: Действие open или edit\n        :return:\n        \"\"\"\n        for row in self._rows:\n            # Получаем все ячейки в строке\n            cells = row.find_elements(*self._CELLS_LOCATOR)\n    \n            # Проверяем, содержится ли нужный текст хотя бы в одной ячейке\n            if any(catalog_name in cell.text for cell in cells):\n                if action == \"edit\":\n                    row.find_element(*self._EDIT_BUTTON).click()\n                    return\n                elif action == \"open\":\n                    row.find_element(*self._OPEN_BUTTON).click()\n                    return\n                else:\n                    raise AssertionError(\"Неверное значение параметра action\")\n    \n        # Если цикл завершился без return, значит совпадение не найдено\n>       raise ValueError(f\"Строка с названием '{catalog_name}' не найдена\")\nE       ValueError: Строка с названием 'Типы проектов' не найдена\n\npages/nsi_page/components/nsi_table_handler.py:87: ValueError",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1762001448420,
+        "stop" : 1762001453128,
+        "duration" : 4708
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762001448420,
+          "stop" : 1762001453128,
+          "duration" : 4708
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru page",
+          "time" : {
+            "start" : 1762001448420,
+            "stop" : 1762001453127,
+            "duration" : 4707
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Авторизация как admin",
+      "time" : {
+        "start" : 1762001453128,
+        "stop" : 1762001461365,
+        "duration" : 8237
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Login as role: 'admin'",
+        "time" : {
+          "start" : 1762001453128,
+          "stop" : 1762001461365,
+          "duration" : 8237
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'admin'"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762001461365,
+        "stop" : 1762001463751,
+        "duration" : 2386
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Переход в под роль Планировщик",
+      "time" : {
+        "start" : 1762001463751,
+        "stop" : 1762001464826,
+        "duration" : 1075
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбор подроли представления меню",
+        "time" : {
+          "start" : 1762001463751,
+          "stop" : 1762001464826,
+          "duration" : 1075
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'planer'"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Переход на страницу Справочники",
+      "time" : {
+        "start" : 1762001464826,
+        "stop" : 1762001465469,
+        "duration" : 643
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762001464826,
+          "stop" : 1762001465469,
+          "duration" : 643
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru/nsi page",
+          "time" : {
+            "start" : 1762001464826,
+            "stop" : 1762001465469,
+            "duration" : 643
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762001465469,
+        "stop" : 1762001467784,
+        "duration" : 2315
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверка открыта ли страница",
+        "time" : {
+          "start" : 1762001465469,
+          "stop" : 1762001467784,
+          "duration" : 2315
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Переход в каталог 'Типы проектов' с действием 'edit'",
+      "time" : {
+        "start" : 1762001467784,
+        "stop" : 1762001467878,
+        "duration" : 94
+      },
+      "status" : "broken",
+      "statusMessage" : "ValueError: Строка с названием 'Типы проектов' не найдена\n",
+      "statusTrace" : "  File \"/usr/workspace/tests/test_nsi_page.py\", line 40, in test_open_attributes\n    self.nsi_page.open_catalog(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/nsi_page/page.py\", line 43, in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/workspace/pages/nsi_page/components/nsi_table_handler.py\", line 87, in select_row_by_text\n    raise ValueError(f\"Строка с названием '{catalog_name}' не найдена\")\n",
+      "steps" : [ {
+        "name" : "Переход в каталог: 'Типы проектов'",
+        "time" : {
+          "start" : 1762001467784,
+          "stop" : 1762001467874,
+          "duration" : 90
+        },
+        "status" : "broken",
+        "statusMessage" : "ValueError: Строка с названием 'Типы проектов' не найдена\n",
+        "statusTrace" : "  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/nsi_page/page.py\", line 43, in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/workspace/pages/nsi_page/components/nsi_table_handler.py\", line 87, in select_row_by_text\n    raise ValueError(f\"Строка с названием '{catalog_name}' не найдена\")\n",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "catalog_name",
+          "value" : "'Типы проектов'"
+        }, {
+          "name" : "action",
+          "value" : "'edit'"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "fd0bc91f665c5144",
+      "name" : "Ошибка",
+      "source" : "fd0bc91f665c5144.png",
+      "type" : "image/png",
+      "size" : 78934
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 15,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1762001468730,
+      "stop" : 1762001468882,
+      "duration" : 152
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage::0",
+    "time" : {
+      "start" : 1762001468729,
+      "stop" : 1762001468729,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "catalog_name",
+    "value" : "Типы проектов"
+  }, {
+    "name" : "role",
+    "value" : "admin"
+  }, {
+    "name" : "catalog_name",
+    "value" : "Типы проектов"
+  }, {
+    "name" : "feature",
+    "value" : "Переход в раздел справочников {catalog_name}"
+  }, {
+    "name" : "feature",
+    "value" : "Справочники"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_nsi_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNSIPage"
+  }, {
+    "name" : "host",
+    "value" : "687319dd0b21"
+  }, {
+    "name" : "thread",
+    "value" : "11-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_nsi_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'edit'"
+  }, {
+    "name" : "catalog_name",
+    "value" : "'Типы проектов'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "smoke" ]
+  },
+  "source" : "825f90ebdb3d3391.json",
+  "parameterValues" : [ "'edit'", "'Типы проектов'" ]
+}
