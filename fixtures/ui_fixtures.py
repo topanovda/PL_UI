@@ -6,7 +6,7 @@ from selenium import webdriver
 def get_driver(request):
     if os.environ["BROWSER"] == "chrome":
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Запускает браузер в режиме без графического интерфейса (удобно для серверов)
+        # options.add_argument("--headless")  # Запускает браузер в режиме без графического интерфейса (удобно для серверов)
         options.add_argument("--no-sandbox")  # Отключает режим песочницы для предотвращения проблем с правами доступа
         options.add_argument("--disable-dev-shm-usage")  # Отключает использование общей памяти /dev/shm (для Docker и серверных сред)
         options.add_argument("--disable-gpu")  # Отключает GPU, необходимое для headless-режима на некоторых системах
