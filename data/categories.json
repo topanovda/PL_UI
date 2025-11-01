@@ -3,22 +3,22 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/chromium-browser is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception",
+      "name" : "selenium.common.exceptions.TimeoutException: Message: Кнопка войти не найдена на странице",
       "children" : [ {
         "name" : "test_login",
-        "uid" : "dce60e1e11244760",
-        "parentUid" : "61696d8ac70b4dc97bc9c545487ee51e",
+        "uid" : "a0ce4f9bc21eae5f",
+        "parentUid" : "a263e14a5e8a8a76b2ef4387c371d431",
         "status" : "broken",
         "time" : {
-          "start" : 1762003524704,
-          "stop" : 1762003524704,
-          "duration" : 0
+          "start" : 1762003814447,
+          "stop" : 1762003834711,
+          "duration" : 20264
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "61696d8ac70b4dc97bc9c545487ee51e"
+      "uid" : "a263e14a5e8a8a76b2ef4387c371d431"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ],

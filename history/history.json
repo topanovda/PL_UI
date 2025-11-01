@@ -154,13 +154,22 @@
   "3c779999a209d1dc27adabe4d61acaff" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 5,
+      "broken" : 6,
       "skipped" : 0,
       "passed" : 2,
       "unknown" : 0,
-      "total" : 7
+      "total" : 8
     },
     "items" : [ {
+      "uid" : "a0ce4f9bc21eae5f",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Кнопка войти не найдена на странице",
+      "time" : {
+        "start" : 1762003814447,
+        "stop" : 1762003834711,
+        "duration" : 20264
+      }
+    }, {
       "uid" : "dce60e1e11244760",
       "status" : "broken",
       "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/chromium-browser is no longer running, so ChromeDriver is assuming that Chrome has crashed.); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception",
