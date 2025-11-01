@@ -1,26 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
-      "children" : [ {
-        "name" : "test_login",
-        "uid" : "d6b5720487bc9e97",
-        "parentUid" : "e654024171d8bd0aa036bee3720c73ff",
-        "status" : "broken",
-        "time" : {
-          "start" : 1761848308927,
-          "stop" : 1761848311996,
-          "duration" : 3069
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "e654024171d8bd0aa036bee3720c73ff"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ],
+  "children" : [ ],
   "name" : "categories"
 }

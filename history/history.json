@@ -4,11 +4,19 @@
       "failed" : 0,
       "broken" : 3,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "bbbf239601f04aee",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762001314847,
+        "stop" : 1762001325035,
+        "duration" : 10188
+      }
+    }, {
       "uid" : "d6b5720487bc9e97",
       "status" : "broken",
       "statusDetails" : "AttributeError: type object 'Credentials' has no attribute 'LOGIN'",
