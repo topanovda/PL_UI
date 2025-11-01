@@ -1,0 +1,421 @@
+{
+  "uid" : "d57e2a299ef2a095",
+  "name" : "test_open_attributes[\\u0415\\u0434\\u0438\\u043d\\u0438\\u0446\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f-open]",
+  "fullName" : "tests.test_nsi_page.TestNSIPage#test_open_attributes",
+  "historyId" : "a0edeb6abd44616e5ed99fd967d1798f",
+  "time" : {
+    "start" : 1762004374219,
+    "stop" : 1762004414577,
+    "duration" : 40358
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1762004371287,
+      "stop" : 1762004371572,
+      "duration" : 285
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage",
+    "time" : {
+      "start" : 1762004374170,
+      "stop" : 1762004374218,
+      "duration" : 48
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1762004371572,
+      "stop" : 1762004374170,
+      "duration" : 2598
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1762004374219,
+        "stop" : 1762004384153,
+        "duration" : 9934
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762004374220,
+          "stop" : 1762004384153,
+          "duration" : 9933
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru page",
+          "time" : {
+            "start" : 1762004374220,
+            "stop" : 1762004384153,
+            "duration" : 9933
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "Авторизация как admin",
+      "time" : {
+        "start" : 1762004384153,
+        "stop" : 1762004398104,
+        "duration" : 13951
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Login as role: 'admin'",
+        "time" : {
+          "start" : 1762004384153,
+          "stop" : 1762004398104,
+          "duration" : 13951
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'admin'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762004398104,
+        "stop" : 1762004402813,
+        "duration" : 4709
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Переход в под роль Планировщик",
+      "time" : {
+        "start" : 1762004402813,
+        "stop" : 1762004404693,
+        "duration" : 1880
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбор подроли представления меню",
+        "time" : {
+          "start" : 1762004402813,
+          "stop" : 1762004404693,
+          "duration" : 1880
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'planer'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Переход на страницу Справочники",
+      "time" : {
+        "start" : 1762004404693,
+        "stop" : 1762004405675,
+        "duration" : 982
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762004404693,
+          "stop" : 1762004405675,
+          "duration" : 982
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru/nsi page",
+          "time" : {
+            "start" : 1762004404693,
+            "stop" : 1762004405675,
+            "duration" : 982
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762004405675,
+        "stop" : 1762004410416,
+        "duration" : 4741
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверка открыта ли страница",
+        "time" : {
+          "start" : 1762004405675,
+          "stop" : 1762004410416,
+          "duration" : 4741
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Переход в каталог 'Единицы измерения' с действием 'open'",
+      "time" : {
+        "start" : 1762004410416,
+        "stop" : 1762004414577,
+        "duration" : 4161
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Переход в каталог: 'Единицы измерения'",
+        "time" : {
+          "start" : 1762004410416,
+          "stop" : 1762004414577,
+          "duration" : 4161
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "catalog_name",
+          "value" : "'Единицы измерения'"
+        }, {
+          "name" : "action",
+          "value" : "'open'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 15,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage::0",
+    "time" : {
+      "start" : 1762004414579,
+      "stop" : 1762004414579,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1762004414579,
+      "stop" : 1762004414789,
+      "duration" : 210
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "catalog_name",
+    "value" : "Единицы измерения"
+  }, {
+    "name" : "role",
+    "value" : "admin"
+  }, {
+    "name" : "catalog_name",
+    "value" : "Единицы измерения"
+  }, {
+    "name" : "feature",
+    "value" : "Справочники"
+  }, {
+    "name" : "feature",
+    "value" : "Переход в раздел справочников {catalog_name}"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_nsi_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNSIPage"
+  }, {
+    "name" : "host",
+    "value" : "ce3a5b434fa4"
+  }, {
+    "name" : "thread",
+    "value" : "37-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_nsi_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'open'"
+  }, {
+    "name" : "catalog_name",
+    "value" : "'Единицы измерения'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "2145ebd97d75eb7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1762001471928,
+          "stop" : 1762001492594,
+          "duration" : 20666
+        }
+      } ]
+    },
+    "tags" : [ "smoke" ]
+  },
+  "source" : "d57e2a299ef2a095.json",
+  "parameterValues" : [ "'open'", "'Единицы измерения'" ]
+}

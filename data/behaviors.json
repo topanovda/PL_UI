@@ -1,18 +1,454 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "children" : [ {
-    "name" : "test_login",
-    "uid" : "a0ce4f9bc21eae5f",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "broken",
-    "time" : {
-      "start" : 1762003814447,
-      "stop" : 1762003834711,
-      "duration" : 20264
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
+    "name" : "Справочники",
+    "children" : [ {
+      "name" : "test_open_attributes[\\u0415\\u0434\\u0438\\u043d\\u0438\\u0446\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f-open]",
+      "uid" : "d57e2a299ef2a095",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374219,
+        "stop" : 1762004414577,
+        "duration" : 40358
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Единицы измерения'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b-edit]",
+      "uid" : "3ec848a6576e4758",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374273,
+        "stop" : 1762004413913,
+        "duration" : 39640
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Атрибуты'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u043e\\u0432-open]",
+      "uid" : "e2c7236488d87941",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374274,
+        "stop" : 1762004417688,
+        "duration" : 43414
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Типы проектов'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u043e\\u0432-edit]",
+      "uid" : "91a8b8e83cef6c4e",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374293,
+        "stop" : 1762004417159,
+        "duration" : 42866
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Типы проектов'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0411\\u0430\\u0437\\u043e\\u0432\\u044b\\u0435 \\u043a\\u0430\\u043b\\u0435\\u043d\\u0434\\u0430\\u0440\\u0438-edit]",
+      "uid" : "2bcd79398a7f8c09",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374475,
+        "stop" : 1762004416456,
+        "duration" : 41981
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Базовые календари'" ]
+    }, {
+      "name" : "test_open_attributes[\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0438-edit]",
+      "uid" : "101cb9a36f0abce5",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374529,
+        "stop" : 1762004418542,
+        "duration" : 44013
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Показатели'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0411\\u0430\\u0437\\u043e\\u0432\\u044b\\u0435 \\u043a\\u0430\\u043b\\u0435\\u043d\\u0434\\u0430\\u0440\\u0438-open]",
+      "uid" : "979a5f837887cd19",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374582,
+        "stop" : 1762004408815,
+        "duration" : 34233
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Базовые календари'" ]
+    }, {
+      "name" : "test_open_nsi_page",
+      "uid" : "31991494c8b20449",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374597,
+        "stop" : 1762004411897,
+        "duration" : 37300
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_open_attributes[\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0438-open]",
+      "uid" : "a1a9135e49316f58",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004412594,
+        "stop" : 1762004439952,
+        "duration" : 27358
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Показатели'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0415\\u0434\\u0438\\u043d\\u0438\\u0446\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f-edit]",
+      "uid" : "abc43d1aa12ba672",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004413954,
+        "stop" : 1762004442862,
+        "duration" : 28908
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Единицы измерения'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-edit]",
+      "uid" : "4c388b7464e81b1b",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004415652,
+        "stop" : 1762004443714,
+        "duration" : 28062
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Статусы версий'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b-open]",
+      "uid" : "101775615d20c3e4",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004417222,
+        "stop" : 1762004444147,
+        "duration" : 26925
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Атрибуты'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-edit]",
+      "uid" : "22a6004d08c23d3e",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004418330,
+        "stop" : 1762004444581,
+        "duration" : 26251
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Типы версий'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-open]",
+      "uid" : "59efbd16e26fa87e",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004418879,
+        "stop" : 1762004445693,
+        "duration" : 26814
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Типы версий'" ]
+    }, {
+      "name" : "test_open_create_element",
+      "uid" : "804dd6b7e9e673de",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004441653,
+        "stop" : 1762004466915,
+        "duration" : 25262
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_open_attributes[\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-open]",
+      "uid" : "600adbee5e7878fb",
+      "parentUid" : "6e7e81d6ea13055f7f8e23afe23e0444",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004444969,
+        "stop" : 1762004461255,
+        "duration" : 16286
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Статусы версий'" ]
+    } ],
+    "uid" : "6e7e81d6ea13055f7f8e23afe23e0444"
+  }, {
+    "name" : "Переход в раздел справочников {catalog_name}",
+    "children" : [ {
+      "name" : "test_open_attributes[\\u0415\\u0434\\u0438\\u043d\\u0438\\u0446\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f-open]",
+      "uid" : "d57e2a299ef2a095",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374219,
+        "stop" : 1762004414577,
+        "duration" : 40358
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Единицы измерения'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b-edit]",
+      "uid" : "3ec848a6576e4758",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374273,
+        "stop" : 1762004413913,
+        "duration" : 39640
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Атрибуты'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u043e\\u0432-open]",
+      "uid" : "e2c7236488d87941",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374274,
+        "stop" : 1762004417688,
+        "duration" : 43414
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Типы проектов'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u043e\\u0432-edit]",
+      "uid" : "91a8b8e83cef6c4e",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374293,
+        "stop" : 1762004417159,
+        "duration" : 42866
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Типы проектов'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0411\\u0430\\u0437\\u043e\\u0432\\u044b\\u0435 \\u043a\\u0430\\u043b\\u0435\\u043d\\u0434\\u0430\\u0440\\u0438-edit]",
+      "uid" : "2bcd79398a7f8c09",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374475,
+        "stop" : 1762004416456,
+        "duration" : 41981
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Базовые календари'" ]
+    }, {
+      "name" : "test_open_attributes[\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0438-edit]",
+      "uid" : "101cb9a36f0abce5",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374529,
+        "stop" : 1762004418542,
+        "duration" : 44013
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Показатели'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0411\\u0430\\u0437\\u043e\\u0432\\u044b\\u0435 \\u043a\\u0430\\u043b\\u0435\\u043d\\u0434\\u0430\\u0440\\u0438-open]",
+      "uid" : "979a5f837887cd19",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374582,
+        "stop" : 1762004408815,
+        "duration" : 34233
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Базовые календари'" ]
+    }, {
+      "name" : "test_open_attributes[\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0438-open]",
+      "uid" : "a1a9135e49316f58",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004412594,
+        "stop" : 1762004439952,
+        "duration" : 27358
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Показатели'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0415\\u0434\\u0438\\u043d\\u0438\\u0446\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f-edit]",
+      "uid" : "abc43d1aa12ba672",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004413954,
+        "stop" : 1762004442862,
+        "duration" : 28908
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Единицы измерения'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-edit]",
+      "uid" : "4c388b7464e81b1b",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004415652,
+        "stop" : 1762004443714,
+        "duration" : 28062
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Статусы версий'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b-open]",
+      "uid" : "101775615d20c3e4",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004417222,
+        "stop" : 1762004444147,
+        "duration" : 26925
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Атрибуты'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-edit]",
+      "uid" : "22a6004d08c23d3e",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004418330,
+        "stop" : 1762004444581,
+        "duration" : 26251
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'edit'", "'Типы версий'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0422\\u0438\\u043f\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-open]",
+      "uid" : "59efbd16e26fa87e",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004418879,
+        "stop" : 1762004445693,
+        "duration" : 26814
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Типы версий'" ]
+    }, {
+      "name" : "test_open_attributes[\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441\\u044b \\u0432\\u0435\\u0440\\u0441\\u0438\\u0439-open]",
+      "uid" : "600adbee5e7878fb",
+      "parentUid" : "a8e5734cd404b814db2d9ef958a67457",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004444969,
+        "stop" : 1762004461255,
+        "duration" : 16286
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "'open'", "'Статусы версий'" ]
+    } ],
+    "uid" : "a8e5734cd404b814db2d9ef958a67457"
+  }, {
+    "name" : "Переход в раздел Справочники",
+    "children" : [ {
+      "name" : "test_open_nsi_page",
+      "uid" : "31991494c8b20449",
+      "parentUid" : "ac4f2fbd5788d27191e3ac4099920cb2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004374597,
+        "stop" : 1762004411897,
+        "duration" : 37300
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "ac4f2fbd5788d27191e3ac4099920cb2"
+  }, {
+    "name" : "Смена подроли пользователя",
+    "children" : [ {
+      "name" : "test_switch_role",
+      "uid" : "2bfe28479008dc3f",
+      "parentUid" : "5d396d9d1202be37c1fd4855dce0ecd7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004419710,
+        "stop" : 1762004441107,
+        "duration" : 21397
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "5d396d9d1202be37c1fd4855dce0ecd7"
+  }, {
+    "name" : "переход к созданию элемента справочника",
+    "children" : [ {
+      "name" : "test_open_create_element",
+      "uid" : "804dd6b7e9e673de",
+      "parentUid" : "e8a8c03566cb87164780efd80ab32053",
+      "status" : "passed",
+      "time" : {
+        "start" : 1762004441653,
+        "stop" : 1762004466915,
+        "duration" : 25262
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e8a8c03566cb87164780efd80ab32053"
   } ],
   "name" : "behaviors"
 }

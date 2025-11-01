@@ -1,0 +1,414 @@
+{
+  "uid" : "123187ccbf5f7f2d",
+  "name" : "test_open_attributes[\\u0410\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b-open]",
+  "fullName" : "tests.test_nsi_page.TestNSIPage#test_open_attributes",
+  "historyId" : "84d9aa590286dbbe6101c774150a77d6",
+  "time" : {
+    "start" : 1762004374479,
+    "stop" : 1762004414660,
+    "duration" : 40181
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception",
+  "statusTrace" : "self = <test_nsi_page.TestNSIPage object at 0x7f07daaea3f0>, action = 'open'\ncatalog_name = 'Атрибуты'\n\n    @pytest.mark.smoke\n    @allure.feature(\"Переход в раздел справочников {catalog_name}\")\n    @pytest.mark.parametrize(\"action\", [\"open\", \"edit\"])\n    @pytest.mark.parametrize(\"catalog_name\", [\"Типы проектов\", \"Атрибуты\", \"Показатели\", \"Базовые календари\", \"Единицы измерения\", \"Типы версий\", \"Статусы версий\"])\n    def test_open_attributes(self, action, catalog_name):\n        allure.dynamic.label(\"catalog_name\", catalog_name)\n        with allure.step(\"Открытие страницы\"):\n            self.login_page.open()\n        with allure.step(\"Авторизация как admin\"):\n            self.login_page.login_as(\"admin\")\n        with allure.step(\"Проверка что страница открыта\"):\n            self.project_page.is_page_opened()\n        with allure.step(\"Переход в под роль Планировщик\"):\n            self.sidebar.select_role(\"planer\")\n        with allure.step(\"Переход на страницу Справочники\"):\n            self.nsi_page.open()\n        with allure.step(\"Проверка что страница открыта\"):\n            self.nsi_page.is_page_opened()\n        with allure.step(f\"Переход в каталог '{catalog_name}' с действием '{action}'\"):\n>           self.nsi_page.open_catalog(catalog_name, action)\n\ntests/test_nsi_page.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/nsi_page/page.py:43: in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\npages/nsi_page/components/nsi_table_handler.py:73: in select_row_by_text\n    cells = row.find_elements(*self._CELLS_LOCATOR)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:631: in find_elements\n    return self._execute(Command.FIND_CHILD_ELEMENTS, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:573: in _execute\n    return self._parent.execute(command, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py:454: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f07da7f9160>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"stale element reference\",\"message\":\"stale element reference: stale element not found in the current frame\\\\n  (Session info: chrome=131.0.6778.108)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                try:\n                    value = json.loads(value_json)\n                    if isinstance(value, dict):\n                        if len(value) == 1:\n                            value = value[\"value\"]\n                        status = value.get(\"error\", None)\n                        if not status:\n                            status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                            message = value.get(\"value\") or value.get(\"message\")\n                            if not isinstance(message, str):\n                                value = message\n                                message = message.get(\"message\")\n                        else:\n                            message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\nE         (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception\n\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/errorhandler.py:232: StaleElementReferenceException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_driver",
+    "time" : {
+      "start" : 1762004371628,
+      "stop" : 1762004374283,
+      "duration" : 2655
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1762004371286,
+      "stop" : 1762004371628,
+      "duration" : 342
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage",
+    "time" : {
+      "start" : 1762004374286,
+      "stop" : 1762004374478,
+      "duration" : 192
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception",
+    "statusTrace" : "self = <test_nsi_page.TestNSIPage object at 0x7f07daaea3f0>, action = 'open'\ncatalog_name = 'Атрибуты'\n\n    @pytest.mark.smoke\n    @allure.feature(\"Переход в раздел справочников {catalog_name}\")\n    @pytest.mark.parametrize(\"action\", [\"open\", \"edit\"])\n    @pytest.mark.parametrize(\"catalog_name\", [\"Типы проектов\", \"Атрибуты\", \"Показатели\", \"Базовые календари\", \"Единицы измерения\", \"Типы версий\", \"Статусы версий\"])\n    def test_open_attributes(self, action, catalog_name):\n        allure.dynamic.label(\"catalog_name\", catalog_name)\n        with allure.step(\"Открытие страницы\"):\n            self.login_page.open()\n        with allure.step(\"Авторизация как admin\"):\n            self.login_page.login_as(\"admin\")\n        with allure.step(\"Проверка что страница открыта\"):\n            self.project_page.is_page_opened()\n        with allure.step(\"Переход в под роль Планировщик\"):\n            self.sidebar.select_role(\"planer\")\n        with allure.step(\"Переход на страницу Справочники\"):\n            self.nsi_page.open()\n        with allure.step(\"Проверка что страница открыта\"):\n            self.nsi_page.is_page_opened()\n        with allure.step(f\"Переход в каталог '{catalog_name}' с действием '{action}'\"):\n>           self.nsi_page.open_catalog(catalog_name, action)\n\ntests/test_nsi_page.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages/nsi_page/page.py:43: in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\npages/nsi_page/components/nsi_table_handler.py:73: in select_row_by_text\n    cells = row.find_elements(*self._CELLS_LOCATOR)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:631: in find_elements\n    return self._execute(Command.FIND_CHILD_ELEMENTS, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py:573: in _execute\n    return self._parent.execute(command, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py:454: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f07da7f9160>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"stale element reference\",\"message\":\"stale element reference: stale element not found in the current frame\\\\n  (Session info: chrome=131.0.6778.108)\",\"stacktrace\":\"\"}}'}\n\n    def check_response(self, response: dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                try:\n                    value = json.loads(value_json)\n                    if isinstance(value, dict):\n                        if len(value) == 1:\n                            value = value[\"value\"]\n                        status = value.get(\"error\", None)\n                        if not status:\n                            status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                            message = value.get(\"value\") or value.get(\"message\")\n                            if not isinstance(message, str):\n                                value = message\n                                message = message.get(\"message\")\n                        else:\n                            message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\nE         (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception\n\n../local/lib/python3.13/site-packages/selenium/webdriver/remote/errorhandler.py:232: StaleElementReferenceException",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1762004374479,
+        "stop" : 1762004384386,
+        "duration" : 9907
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762004374479,
+          "stop" : 1762004384386,
+          "duration" : 9907
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru page",
+          "time" : {
+            "start" : 1762004374479,
+            "stop" : 1762004384386,
+            "duration" : 9907
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "Авторизация как admin",
+      "time" : {
+        "start" : 1762004384386,
+        "stop" : 1762004400908,
+        "duration" : 16522
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Login as role: 'admin'",
+        "time" : {
+          "start" : 1762004384386,
+          "stop" : 1762004400908,
+          "duration" : 16522
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'admin'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762004400908,
+        "stop" : 1762004405921,
+        "duration" : 5013
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Переход в под роль Планировщик",
+      "time" : {
+        "start" : 1762004405921,
+        "stop" : 1762004407931,
+        "duration" : 2010
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбор подроли представления меню",
+        "time" : {
+          "start" : 1762004405921,
+          "stop" : 1762004407931,
+          "duration" : 2010
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "role",
+          "value" : "'planer'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Переход на страницу Справочники",
+      "time" : {
+        "start" : 1762004407931,
+        "stop" : 1762004409670,
+        "duration" : 1739
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открытие страницы",
+        "time" : {
+          "start" : 1762004407931,
+          "stop" : 1762004409670,
+          "duration" : 1739
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open https://lk.staging.po.ladcloud.ru/nsi page",
+          "time" : {
+            "start" : 1762004407931,
+            "stop" : 1762004409670,
+            "duration" : 1739
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "Проверка что страница открыта",
+      "time" : {
+        "start" : 1762004409670,
+        "stop" : 1762004414092,
+        "duration" : 4422
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверка открыта ли страница",
+        "time" : {
+          "start" : 1762004409670,
+          "stop" : 1762004414092,
+          "duration" : 4422
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Переход в каталог 'Атрибуты' с действием 'open'",
+      "time" : {
+        "start" : 1762004414092,
+        "stop" : 1762004414635,
+        "duration" : 543
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception\n\n",
+      "statusTrace" : "  File \"/usr/workspace/tests/test_nsi_page.py\", line 40, in test_open_attributes\n    self.nsi_page.open_catalog(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/nsi_page/page.py\", line 43, in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/workspace/pages/nsi_page/components/nsi_table_handler.py\", line 73, in select_row_by_text\n    cells = row.find_elements(*self._CELLS_LOCATOR)\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py\", line 631, in find_elements\n    return self._execute(Command.FIND_CHILD_ELEMENTS, {\"using\": by, \"value\": value})[\"value\"]\n           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py\", line 573, in _execute\n    return self._parent.execute(command, params)\n           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py\", line 454, in execute\n    self.error_handler.check_response(response)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+      "steps" : [ {
+        "name" : "Переход в каталог: 'Атрибуты'",
+        "time" : {
+          "start" : 1762004414093,
+          "stop" : 1762004414614,
+          "duration" : 521
+        },
+        "status" : "broken",
+        "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=131.0.6778.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception\n\n",
+        "statusTrace" : "  File \"/usr/local/lib/python3.13/site-packages/allure_commons/_allure.py\", line 202, in impl\n    return func(*a, **kw)\n  File \"/usr/workspace/pages/nsi_page/page.py\", line 43, in open_catalog\n    self.nsi_table.select_row_by_text(catalog_name, action)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/workspace/pages/nsi_page/components/nsi_table_handler.py\", line 73, in select_row_by_text\n    cells = row.find_elements(*self._CELLS_LOCATOR)\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py\", line 631, in find_elements\n    return self._execute(Command.FIND_CHILD_ELEMENTS, {\"using\": by, \"value\": value})[\"value\"]\n           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webelement.py\", line 573, in _execute\n    return self._parent.execute(command, params)\n           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py\", line 454, in execute\n    self.error_handler.check_response(response)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/site-packages/selenium/webdriver/remote/errorhandler.py\", line 232, in check_response\n    raise exception_class(message, screen, stacktrace)\n",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "catalog_name",
+          "value" : "'Атрибуты'"
+        }, {
+          "name" : "action",
+          "value" : "'open'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "6d61df12e689ceab",
+      "name" : "Ошибка",
+      "source" : "6d61df12e689ceab.png",
+      "type" : "image/png",
+      "size" : 78936
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 15,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "get_driver::0",
+    "time" : {
+      "start" : 1762004415745,
+      "stop" : 1762004415898,
+      "duration" : 153
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "_xunit_setup_method_fixture_TestNSIPage::0",
+    "time" : {
+      "start" : 1762004415744,
+      "stop" : 1762004415744,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "catalog_name",
+    "value" : "Атрибуты"
+  }, {
+    "name" : "role",
+    "value" : "admin"
+  }, {
+    "name" : "catalog_name",
+    "value" : "Атрибуты"
+  }, {
+    "name" : "feature",
+    "value" : "Переход в раздел справочников {catalog_name}"
+  }, {
+    "name" : "feature",
+    "value" : "Справочники"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_nsi_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNSIPage"
+  }, {
+    "name" : "host",
+    "value" : "ce3a5b434fa4"
+  }, {
+    "name" : "thread",
+    "value" : "14-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_nsi_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "action",
+    "value" : "'open'"
+  }, {
+    "name" : "catalog_name",
+    "value" : "'Атрибуты'"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "smoke" ]
+  },
+  "source" : "123187ccbf5f7f2d.json",
+  "parameterValues" : [ "'open'", "'Атрибуты'" ]
+}

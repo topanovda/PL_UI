@@ -2,7 +2,7 @@
   "values" : [ "main" ],
   "name" : "Branch"
 }, {
-  "values" : [ "aff892823c59e879e7ab5acb1da28abedb74b168" ],
+  "values" : [ "3d0178d7d42cf745bc6f338955f4f8ccd393f026" ],
   "name" : "Commit"
 }, {
   "values" : [ "chrome" ],
@@ -10,4 +10,10 @@
 }, {
   "values" : [ "staging" ],
   "name" : "Stage"
+}, {
+  "values" : [ "smoke" ],
+  "name" : "Suite"
+}, {
+  "values" : [ "10" ],
+  "name" : "Threads"
 } ]

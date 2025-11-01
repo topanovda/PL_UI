@@ -1,26 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "selenium.common.exceptions.TimeoutException: Message: Кнопка войти не найдена на странице",
-      "children" : [ {
-        "name" : "test_login",
-        "uid" : "a0ce4f9bc21eae5f",
-        "parentUid" : "a263e14a5e8a8a76b2ef4387c371d431",
-        "status" : "broken",
-        "time" : {
-          "start" : 1762003814447,
-          "stop" : 1762003834711,
-          "duration" : 20264
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "a263e14a5e8a8a76b2ef4387c371d431"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ],
+  "children" : [ ],
   "name" : "categories"
 }
