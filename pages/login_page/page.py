@@ -13,7 +13,7 @@ class LoginPage(BasePage):
 
     _EMAIL_FIELD = "//input[@id='email']"
     _PASSWORD_FIELD = "//input[@id='password']"
-    _SUBMIT_BUTTON = "//button[@type='sub_mit']"
+    _SUBMIT_BUTTON = "//button[@type='submit']"
     _UPDATE_BUTTON = "//div[@class='ant-modal-content']//button[@type='button']"
 
     @allure.step("Login as role: {role}")
