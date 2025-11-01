@@ -154,13 +154,22 @@
   "3c779999a209d1dc27adabe4d61acaff" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 3,
+      "broken" : 4,
       "skipped" : 0,
       "passed" : 2,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "3a1f419f2e7dc76f",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Кнопка войти не найдена на странице",
+      "time" : {
+        "start" : 1762003126010,
+        "stop" : 1762003145335,
+        "duration" : 19325
+      }
+    }, {
       "uid" : "56f7a3a4a0fe27ed",
       "status" : "passed",
       "time" : {
