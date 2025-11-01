@@ -12,8 +12,8 @@ services: # Описание микросервисов (контейнеров)
 #    command: /bin/sh -c "STAGE=$$STAGE BROWSER=$$BROWSER pytest -sv -o log_cli=true -m=$$SUITE --alluredir=allure-results"
     environment: # Переменные окружения
       STAGE: ${STAGE:-staging}
-      LOGIN: ${STAGING_LOGIN}
-      PASSWORD: ${STAGING_PASSWORD}
+      STAGING_LOGIN: ${STAGING_LOGIN}
+      STAGING_PASSWORD: ${STAGING_PASSWORD}
       BROWSER: ${BROWSER:-chrome}
       SUITE: ${SUITE}
       THREADS: ${THREADS:-1}
